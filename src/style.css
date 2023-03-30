@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: #DEDEDE;
+}
+header{
+    background-color: white;
+    height: 154px;
+    filter: drop-shadow(0px 1px 5px #F48221);
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+}
+#logo{
+    width: 250px;
+    margin-left: 0px;
+}
+#pagetitle{
+    width: 250px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+#forbutton{
+    width: 250px;
+}
+header h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+main{
+    background-color: #DEDEDE;
+    display: flex;
+    flex-direction: column;
+}
+#inputs{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 65px;
+
+    width: 515px;
+    height: 674px;
+
+    background: #FFFFFF;
+
+    box-shadow: 0px 0px 5px #F48221;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+.group{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#inputs h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Hind';
+    font-style: normal;
+}
+#inputs input{
+    width: 300px;
+    height: 62px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px #F48221;
+    border-radius: 10px;
+    border-color: #f4832100;
+    margin-top: 16px;
+    margin-bottom: 46px;
+    font-size: 20px;
+    text-align: center;
+}
+#inputs input::placeholder{
+  font-size: 20px;
+  text-align: center;
+  opacity: 0.4;
+}
+#inputs button{
+    width: 179px;
+    height: 90px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px #F48221;
+    border-radius: 10px;
+    border-color: #f4832100;
+    font-size: 32px;
+    font-weight: 400;
+    color: black;
+    margin-top: 30px;
+}
+#inputs button:active{
+    background-color: #F48221;
+}
+#logoImg{
+    width: 236px;
+    height: 152px;
+}
