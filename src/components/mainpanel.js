@@ -40,7 +40,7 @@ class MainPanel extends React.Component{
         copy.push({
             id: i,
             question_type: '',
-            qurstion_text: '',
+            question_text: '',
             answer: []
         });
         setValue(copy);
