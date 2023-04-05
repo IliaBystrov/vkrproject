@@ -1,13 +1,18 @@
 import React from 'react'
-import Task_short from './task_short_text'
-import Task_Long from './task_long_text'
+import Short_Answer from './short_answer'
+import Long_Answer from './long_answer'
+import {One_Answer} from './one_answer'
+import {Many_Answers} from './many_answers'
 
 class QPool extends React.Component{
     constructor(props){
         super(props);
         this.state={value:'short'};
         this.handleChange = this.handleChange.bind(this);
-        const item = <Task_short></Task_short>;
+        const item = <Short_Answer qtype={this.props.qtype}
+        qtext={this.props.qtext}
+        ans={this.props.ans}
+        ></Short_Answer>
     }
     handleChange(event){
         this.setState({value: event.target.value});
@@ -27,7 +32,7 @@ class QPool extends React.Component{
                     </select>
                 {this.item}
                 </div>
-                <button>
+                <button id="question_delete" onClick={() => this.props.onDeleted(this.props.id)}>
                     <img src={this.props.image_delete} alt="delete"></img>
                 </button>
             </div>
@@ -37,16 +42,32 @@ class QPool extends React.Component{
         this.item=null;
         switch(x){
             case 'short':
-            this.item=<Task_short></Task_short>;
+            this.item=<Short_Answer
+                qtype={this.props.qtype}
+                qtext={this.props.qtext}
+                ans={this.props.ans}
+            ></Short_Answer>;
             break;
             case 'long':
-            this.item=<h1><Task_Long></Task_Long></h1>;
+            this.item=<Long_Answer
+                qtype={this.props.qtype}
+                qtext={this.props.qtext}
+                ans={this.props.ans}
+            ></Long_Answer>;
             break;
             case 'one':
-            this.item=<h1>one</h1>;
+            this.item=<One_Answer
+                qtype={this.props.qtype}
+                qtext={this.props.qtext}
+                ans={this.props.ans}
+            ></One_Answer>;
             break;
             case 'many':
-            this.item=<h1>many</h1>;
+            this.item=<Many_Answers
+                qtype={this.props.qtype}
+                qtext={this.props.qtext}
+                ans={this.props.ans}
+            ></Many_Answers>;
             break;
         }
     }

@@ -3,14 +3,14 @@ import QPool from './qpoll'
 
 class MainPanel extends React.Component{
 
+   /* const [items, setValue] = useState([{
+        id: 0,
+        question_type: '',
+        question_text: '',
+        answer: []        
+    }]);
+
     render(){
-        const [arr, setValue] = useState([{
-            id: 0,
-            question_type: '',
-            qurstion_text: '',
-            answer: []
-        }]);
-        
 
         return(
             <div className = "mainp">
@@ -23,7 +23,7 @@ class MainPanel extends React.Component{
                 </select>
                 <QPool image_delete={this.props.image_delete_task}></QPool>
 
-                <button id="addtask" onClick={this.additem}>
+                <button id="addtask" onClick={this.emptyvoid()}>
                     <img src={this.props.image_add_task} alt='add'></img>
                     <h1>Добавить вопрос</h1>
                 </button>
@@ -33,6 +33,7 @@ class MainPanel extends React.Component{
             </div>
         )
     }
+    emptyvoid(){}
     additem () {
         let copy = Object.assign([], arr);
         let i = copy.lenght();
@@ -44,7 +45,7 @@ class MainPanel extends React.Component{
             answer: []
         });
         setValue(copy);
-    }
+    }*/
 }
 
 export default MainPanel

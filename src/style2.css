@@ -12,6 +12,12 @@ header{
     flex-direction: row;
     align-content: center;
 }
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: #F48221;
+    margin-top: 10px;
+}
 #logo{
     width: 250px;
     margin-left: 0px;
@@ -251,7 +257,7 @@ main{
 #qcolumn{
     margin-left: 10px;
 }
-.qarea button{
+#question_delete{
     width: 30px;
     height: 30px;
     margin-left: auto;
@@ -262,6 +268,10 @@ main{
     align-items: center;
     vertical-align: middle;
 }
+#question_delete:active{
+    background-color:#F48221 ;
+}
+
 .qarea img{
     width: 20px;
     height: 20px;
@@ -275,11 +285,59 @@ main{
     margin-bottom: 10px;
 }
 
-/*Quest type short text*/
+/*Questions text*/
 #short_text{
     margin-top: 10px;
     width: 400px;
     height: 100px;
     resize: vertical;
 }
-
+/*Answers_list*/
+#answer_list{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+#answer_delete{
+    width: 25px;
+    height: 25px;
+    background-color: #F48221;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+#answer_delete img{
+    width: 13.5px;
+    height: 13.5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#answer_text{
+    height: 22px;
+    width: 200px;
+    border: 1px solid #F48221;
+    box-shadow: 0px 0px 5px #F48221;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+#answer_text::placeholder{
+    opacity: 0.4;
+}
+#add_answer{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #F48221;
+    border: 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+#add_answer img{
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}

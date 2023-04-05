@@ -12,16 +12,16 @@ class ShablonCard extends React.Component{
                 </div>
                 <div className='cardbuttons'>
                     <button id="cardbutton" onClick={() => this.docopy(id)}>
-                        <img src={this.props.image1} alt='copy' id="cardimg"></img>
+                        <img src={require('../images/copy.png')} alt='copy' id="cardimg"></img>
                     </button>
                     <button id="cardbutton" onClick={() => this.getlink(link)}>
-                        <img src={this.props.image2} alt='link' id="cardimg"></img>
+                        <img src={require('../images/link.png')} alt='link' id="cardimg"></img>
                     </button>
                     <button id="cardbutton" onClick={() => this.gotoset(id)}>
-                        <img src={this.props.image3} alt='settings' id="cardimg"></img>
+                        <img src={require('../images/setings.png')} alt='settings' id="cardimg"></img>
                     </button>
                     <button id="cardbutton" onClick={() => this.dodelete(id)}>
-                        <img src={this.props.image4} alt='delete' id="cardimg"></img>
+                        <img src={require('../images/delete.png')} alt='delete' id="cardimg"></img>
                     </button>
                 </div>
                 

@@ -6,7 +6,7 @@ class SearchShablon extends React.Component{
             <div className = "groupbtn">
                 <input id = "InSearch" placeholder = {"Найти шаблон"}></input>
                 <button id ="SearchButton" onClick={this.gotocreate}>
-                    <img id="searchimg" src={this.props.image} alt="search"></img>
+                    <img id="searchimg" src={require('../images/search.png')} alt="search"></img>
                 </button>
             </div>
         )

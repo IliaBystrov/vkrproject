@@ -1,8 +1,8 @@
 import React from 'react'
 
-class Task_Long extends React.Component{
+class Long_Answer extends React.Component{
     render(){
-        const type = "long_text";
+        const type = "long";
         return(
             <div className = "task_short_text">
                 <h1>Текст вопроса</h1>
@@ -12,4 +12,4 @@ class Task_Long extends React.Component{
     }
 }
 
-export default Task_Long
+export default Long_Answer
