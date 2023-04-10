@@ -1,6 +1,6 @@
 import React from 'react'
-import Short_Answer from './short_answer'
-import Long_Answer from './long_answer'
+import {Short_Answer} from './short_answer'
+import {Long_Answer} from './long_answer'
 import {One_Answer} from './one_answer'
 import {Many_Answers} from './many_answers'
 
@@ -12,6 +12,8 @@ class QPool extends React.Component{
         const item = <Short_Answer qtype={this.props.qtype}
         qtext={this.props.qtext}
         ans={this.props.ans}
+        uid={this.props.id}
+        returnValue={this.props.setInfo}
         ></Short_Answer>
     }
     handleChange(event){
@@ -46,6 +48,8 @@ class QPool extends React.Component{
                 qtype={this.props.qtype}
                 qtext={this.props.qtext}
                 ans={this.props.ans}
+                uid={this.props.id}
+                returnValue={this.props.setInfo}
             ></Short_Answer>;
             break;
             case 'long':
@@ -53,6 +57,8 @@ class QPool extends React.Component{
                 qtype={this.props.qtype}
                 qtext={this.props.qtext}
                 ans={this.props.ans}
+                uid={this.props.id}
+                returnValue={this.props.setInfo}
             ></Long_Answer>;
             break;
             case 'one':
@@ -60,6 +66,8 @@ class QPool extends React.Component{
                 qtype={this.props.qtype}
                 qtext={this.props.qtext}
                 ans={this.props.ans}
+                uid={this.props.id}
+                returnValue={this.props.setInfo}
             ></One_Answer>;
             break;
             case 'many':
@@ -67,6 +75,8 @@ class QPool extends React.Component{
                 qtype={this.props.qtype}
                 qtext={this.props.qtext}
                 ans={this.props.ans}
+                uid={this.props.id}
+                returnValue={this.props.setInfo}
             ></Many_Answers>;
             break;
         }

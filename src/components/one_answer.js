@@ -52,7 +52,8 @@ export const One_Answer = () => {
                         <div id='answer_list'>
                             <input type = "text" placeholder = {"Вариант ответа"} 
                             id='answer_text' 
-                            key={answer.id}>
+                            key={answer.id}
+                            name={'answer_area_' + this.props.key}>
                             </input>
                             <button id='answer_delete' onClick={() => deleteitem(answer.id)}>
                                 <img src={require('../images/close.png')}></img>

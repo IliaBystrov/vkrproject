@@ -1,15 +1,12 @@
 import React from 'react'
 
-class Long_Answer extends React.Component{
-    render(){
+export const Long_Answer = (props) =>{
         const type = "long";
         return(
             <div className = "task_short_text">
                 <h1>Текст вопроса</h1>
-                <textarea id="short_text"></textarea>
+                <textarea id="short_text" name={'question_area_' + props.key}
+                onBlur={() => props.returnValue(props.key, type)}></textarea>
             </div>
         )
-    }
 }
-
-export default Long_Answer

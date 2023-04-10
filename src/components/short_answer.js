@@ -1,15 +1,12 @@
 import React from 'react'
 
-class Short_Answer extends React.Component{
-    render(){
+export const Short_Answer = (props) =>{
         const type = "short";
         return(
             <div className = "task_short_text">
                 <h1>Текст вопроса</h1>
-                <textarea id="short_text"></textarea>
+                <textarea id="short_text" name={'question_area_' + props.uid} 
+                onBlur={() => props.returnValue(props.uid, type)}></textarea>
             </div>
         )
-    }
 }
-
-export default Short_Answer
