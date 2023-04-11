@@ -9,9 +9,7 @@ class QPool extends React.Component{
         super(props);
         this.state={value:'short'};
         this.handleChange = this.handleChange.bind(this);
-        const item = <Short_Answer qtype={this.props.qtype}
-        qtext={this.props.qtext}
-        ans={this.props.ans}
+        const item = <Short_Answer
         uid={this.props.id}
         returnValue={this.props.setInfo}
         ></Short_Answer>
@@ -32,7 +30,7 @@ class QPool extends React.Component{
                         <option value="one">Один из списка</option>
                         <option value="many">Несколько из списка</option>
                     </select>
-                {this.item}
+                    {this.item}
                 </div>
                 <button id="question_delete" onClick={() => this.props.onDeleted(this.props.id)}>
                     <img src={this.props.image_delete} alt="delete"></img>
@@ -45,36 +43,24 @@ class QPool extends React.Component{
         switch(x){
             case 'short':
             this.item=<Short_Answer
-                qtype={this.props.qtype}
-                qtext={this.props.qtext}
-                ans={this.props.ans}
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
             ></Short_Answer>;
             break;
             case 'long':
             this.item=<Long_Answer
-                qtype={this.props.qtype}
-                qtext={this.props.qtext}
-                ans={this.props.ans}
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
             ></Long_Answer>;
             break;
             case 'one':
             this.item=<One_Answer
-                qtype={this.props.qtype}
-                qtext={this.props.qtext}
-                ans={this.props.ans}
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
             ></One_Answer>;
             break;
             case 'many':
             this.item=<Many_Answers
-                qtype={this.props.qtype}
-                qtext={this.props.qtext}
-                ans={this.props.ans}
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
             ></Many_Answers>;

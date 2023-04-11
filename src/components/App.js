@@ -12,6 +12,7 @@ export const App = () => {
         answer: []        
     }]);
 
+    //Добавляем вопрос
     const additem = () => {
         let i = 0;
         for(var j=0;j<items.length;j++){
@@ -30,6 +31,7 @@ export const App = () => {
         //Вывод для проверки
         console.log(i);
     };
+    //Удаляем вопрос
     const deleteitem = (id) =>{
         var count = items.length;
         if(count > 1){
@@ -46,19 +48,21 @@ export const App = () => {
         //Для проверки
         //console.log(count);
     };
+    //Получаем текст и варианты ответов на вопросы
     const SetQuestion = (id, type) =>{
         var qtype = type;
         var qtext ='';
         var qans =[];
+        var a, j;
         var inputs = document.getElementsByName('question_area_' + id);
-        for (var j = 0; j < inputs.length; j++) {
-            var a = inputs[j];
+        for (j = 0; j < inputs.length; j++) {
+            a = inputs[j];
             qtext = a.value;
         }
-        if((qtype != 'short') || (qtype != 'long')){
-            var inputs = document.getElementsByName('answer_area_' + id);
-            for (var j = 0; j < inputs.length; j++) {
-                var a = inputs[j];
+        if((qtype !== 'short') || (qtype !== 'long')){
+            inputs = document.getElementsByName('answer_area_' + id);
+            for (j = 0; j < inputs.length; j++) {
+                a = inputs[j];
                 qans.push(a.value);
             }
         }
@@ -72,19 +76,13 @@ export const App = () => {
         };
         copy[idx]=newitem;
         setValue(copy);
-        /*setValue((prevState) => {
-            const idx = prevState.findIndex((item) => item.id === id);
-            const oldanswer = prevState[idx];
-            const newanswer = {...oldanswer, question_type: qtype, question_text: qtext, answer: qans};
-            if(idx===0){
-                return[newanswer,...prevState.slice(idx+1)];
-            }
-            else{
-                return[...prevState.slice(0,idx), newanswer,...prevState.slice(idx+1)];
-            }
-        });*/
-        console.log(qtype);
+
+        /*console.log(qtype);
         console.log(qtext);
+        console.log(qans);*/
+    };
+    const SaveShablon = () => {
+
     };
 
 
@@ -102,11 +100,7 @@ export const App = () => {
                     items.map((item) => {
                         return(
                             <QPool 
-                            key={item.id} 
                             id={item.id} 
-                            qtype={item.question_type} 
-                            qtext={item.question_text}
-                            ans={item.answer}
                             image_delete={require('../images/close.png')}
                             onDeleted={deleteitem}
                             setInfo={SetQuestion}>

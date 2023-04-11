@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 
-export const Many_Answers = () => {
+export const Many_Answers = (props) => {
     const type = "many";
 
         const [answers, setValue] = useState([{
-            id: 0,
+            id: 1,
             value: ''
         },
         {
-            id: 1,
+            id: 2,
             value: ''
         }
         ]);
     
         const additem = () => {
-            var i = answers.length;
-            i += 1;
+            let i = 0;
+            for(var j=0;j<answers.length;j++){
+                if(answers[j].id>i){
+                    i=answers[j].id;
+                }
+            }
+            i++;
             var newanswer = {
                 id: i,
                 answer: ''
@@ -35,22 +40,20 @@ export const Many_Answers = () => {
             };
         };
         /*ПОка не работает*/
-        const SetAnswerValue = (id, text) =>{
+        /*const SetAnswerValue = (id, text) =>{
             setValue((prevState) => {
             const idx = prevState.findIndex((answer) => answer.id === id);
             const oldanswer = prevState[idx];
             const newanswer = {...oldanswer, value: text};
             return[...prevState.slice(0,idx), newanswer,...prevState.slice(idx+1)];
             });
-        };
-        const SetAnswer = () =>{
-            
-        };
+        };*/
 
     return(
         <div className = "task_short_text">
             <h1>Текст вопроса</h1>
-            <textarea id="short_text" name={'question_area_' + this.props.key} ></textarea>
+            <textarea id="short_text" name={'question_area_' + props.uid} 
+            onBlur={() => props.returnValue(props.uid, type)}></textarea>
             {
                 answers.map((answer) => {
                     return(
@@ -58,18 +61,19 @@ export const Many_Answers = () => {
                             <input type = "text" placeholder = {"Вариант ответа"} 
                             id='answer_text' 
                             key={answer.id}
-                            name={'answer_area_' + this.props.key}
+                            name={'answer_area_' + props.uid}
+                            onBlur={() => props.returnValue(props.uid, type)}
                             >
                             </input>
                             <button id='answer_delete' onClick={() => deleteitem(answer.id)}>
-                                <img src={require('../images/close.png')}></img>
+                                <img src={require('../images/close.png')} alt='close'></img>
                             </button>
                         </div>
                      );
                 })
             }
             <button id='add_answer' onClick={additem}>
-                <img src={require('../images/plus.png')}></img>
+                <img src={require('../images/plus.png')} alt='plus'></img>
             </button>
         </div>
     )
