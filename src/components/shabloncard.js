@@ -1,46 +1,33 @@
 import React from 'react'
 
-class ShablonCard extends React.Component{
-    render(){
-        const link ='some link';
-        const id = 11;
+export const ShablonCard = (props) =>{
+
+        const link = props.link;
         return(
             <div className = "card">
                 <div className='title_date'>
-                    <h1>{this.props.cardtitle}</h1>
-                    <h1>{this.props.carddate}</h1>
+                    <h1>{props.cardtitle}</h1>
+                    <h1>{props.carddate}</h1>
                 </div>
                 <div className='cardbuttons'>
-                    <button id="cardbutton" onClick={() => this.docopy(id)}>
+                    <button id="cardbutton" onClick={() => props.CopyShablon(props.id)}>
                         <img src={require('../images/copy.png')} alt='copy' id="cardimg"></img>
                     </button>
-                    <button id="cardbutton" onClick={() => this.getlink(link)}>
+                    <button id="cardbutton" onClick={() => props.CopyLink(link)}>
                         <img src={require('../images/link.png')} alt='link' id="cardimg"></img>
                     </button>
-                    <button id="cardbutton" onClick={() => this.gotoset(id)}>
+                    <button id="cardbutton" onClick={() => props.EditShablon(props.id)}>
                         <img src={require('../images/setings.png')} alt='settings' id="cardimg"></img>
                     </button>
-                    <button id="cardbutton" onClick={() => this.dodelete(id)}>
+                    <button id="cardbutton" onClick={() => props.DeleteShablon(props.id)}>
                         <img src={require('../images/delete.png')} alt='delete' id="cardimg"></img>
                     </button>
+                    <button id="cardbutton" onClick={() => props.ShowResult(props.id)}>
+                        <img src={require('../images/stats.png')} alt='stats' id="cardimg"></img>
+                    </button>
                 </div>
-                
             </div>
         )
-    }
+    
 
-    docopy (id) {
-        console.log("Copy by id = ", id);
-    }
-    getlink (link) {
-        console.log("Link = ", link);
-    }
-    gotoset (id) {
-        console.log("Settings by id = ", id);
-    }
-    dodelete (id) {
-        console.log("Delete where id = ", id);
-    }
-}
-
-export default ShablonCard
+};

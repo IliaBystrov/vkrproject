@@ -6,7 +6,7 @@ body{
 }
 header{
     background-color: white;
-    height: 154px;
+    height: 100px;
     filter: drop-shadow(0px 1px 5px #F48221);
     display:flex;
     flex-direction: row;
@@ -17,7 +17,7 @@ header{
     margin-left: 0px;
 }
 #pagetitle{
-    width: 250px;
+    width: 30%;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -30,6 +30,13 @@ header h1{
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+#logoimg{
+    width: 160px;
+    height: 100px;
 }
 
 
@@ -41,10 +48,10 @@ main{
 #inputs{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 65px;
+    margin-top: 40px;
 
-    width: 515px;
-    height: 674px;
+    width: 400px;
+    height: 400px;
 
     background: #FFFFFF;
 
@@ -62,40 +69,42 @@ main{
     align-items: center;
 }
 #inputs h1{
+    font-family:Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 32px;
-    font-weight: 400;
-    font-family: 'Hind';
-    font-style: normal;
+    font-size: 20px;
+    font-weight: normal;
 }
 #inputs input{
-    width: 300px;
-    height: 62px;
+    width: 250px;
+    height: 35px;
     background: #FFFFFF;
     box-shadow: 0px 0px 5px #F48221;
     border-radius: 10px;
     border-color: #f4832100;
     margin-top: 16px;
     margin-bottom: 46px;
-    font-size: 20px;
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
     text-align: center;
 }
 #inputs input::placeholder{
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
   opacity: 0.4;
 }
 #inputs button{
-    width: 179px;
-    height: 90px;
+    width: 150px;
+    height: 50px;
     background: #FFFFFF;
     box-shadow: 0px 0px 5px #F48221;
     border-radius: 10px;
     border-color: #f4832100;
-    font-size: 32px;
-    font-weight: 400;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
     color: black;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 #inputs button:active{
     background-color: #F48221;
@@ -103,4 +112,19 @@ main{
 #logoImg{
     width: 236px;
     height: 152px;
+}
+.password {
+	position: relative;
+}
+.password-control {
+	position: absolute;
+	top: 26px;
+	right: 10px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+    background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+}
+.password-control.view {
+	background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
 }

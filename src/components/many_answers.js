@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 
 export const Many_Answers = (props) => {
     const type = "many";
-
         const [answers, setValue] = useState([{
             id: 1,
-            value: ''
+            qw: ''
         },
         {
             id: 2,
-            value: ''
+            qw: ''
         }
         ]);
     
@@ -23,7 +22,7 @@ export const Many_Answers = (props) => {
             i++;
             var newanswer = {
                 id: i,
-                answer: ''
+                qw: ''
             };
             setValue((prevState) => [...prevState, newanswer]);
         };
@@ -39,31 +38,22 @@ export const Many_Answers = (props) => {
                 alert('Количество вариантов может быть не меньше 2!');
             };
         };
-        /*ПОка не работает*/
-        /*const SetAnswerValue = (id, text) =>{
-            setValue((prevState) => {
-            const idx = prevState.findIndex((answer) => answer.id === id);
-            const oldanswer = prevState[idx];
-            const newanswer = {...oldanswer, value: text};
-            return[...prevState.slice(0,idx), newanswer,...prevState.slice(idx+1)];
-            });
-        };*/
 
     return(
         <div className = "task_short_text">
             <h1>Текст вопроса</h1>
             <textarea id="short_text" name={'question_area_' + props.uid} 
-            onBlur={() => props.returnValue(props.uid, type)}></textarea>
+            onBlur={() => props.returnValue(props.uid, type)} defaultValue={props.text}></textarea>
             {
                 answers.map((answer) => {
                     return(
-                        <div id='answer_list'>
+                        <div id='answer_list' key={answer.id}>
                             <input type = "text" placeholder = {"Вариант ответа"} 
                             id='answer_text' 
                             key={answer.id}
                             name={'answer_area_' + props.uid}
                             onBlur={() => props.returnValue(props.uid, type)}
-                            >
+                            defaultValue={answer.qw}>
                             </input>
                             <button id='answer_delete' onClick={() => deleteitem(answer.id)}>
                                 <img src={require('../images/close.png')} alt='close'></img>
@@ -76,5 +66,5 @@ export const Many_Answers = (props) => {
                 <img src={require('../images/plus.png')} alt='plus'></img>
             </button>
         </div>
-    )
-}
+    );
+};

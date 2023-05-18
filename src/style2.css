@@ -15,7 +15,7 @@ header{
 footer{
     width: 100%;
     height: 100px;
-    background-color: #F48221;
+    background-color: #f4832100;
     margin-top: 10px;
 }
 #logo{
@@ -36,6 +36,9 @@ header h1{
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
 }
 #logoImg{
     width: 160px;
@@ -43,6 +46,13 @@ header h1{
 }
 main{
     background-color: #DEDEDE;
+    display: flex;
+    flex-direction: row;
+}
+#main_block{
+    width: 100%;
+}
+#main_block_c{
     display: flex;
     flex-direction: row;
 }
@@ -95,6 +105,8 @@ main{
     margin: auto;
     width: 100px;
     font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 /**/
@@ -159,6 +171,8 @@ main{
 }
 .card h1{
     font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 .cardbuttons{
     display: flex;
@@ -201,6 +215,8 @@ main{
 }
 .mainp h1{
     font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 #shablon_title {
     width: 50%;
@@ -214,6 +230,16 @@ main{
 }
 #logoselect{
     margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    border: 1px solid #F48221;
+    box-shadow: 0px 0px 5px #F48221;
+    border-radius: 5px;
+    font-size: 15px;
+}
+#typeselect{
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 200px;
     border: 1px solid #F48221;
     box-shadow: 0px 0px 5px #F48221;
@@ -236,6 +262,8 @@ main{
     font-size: 15px;
     margin-left: auto;
     margin-right: auto;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
 }
 #addtask img{
     width: 30px;
@@ -291,6 +319,9 @@ main{
     width: 400px;
     height: 100px;
     resize: vertical;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 /*Answers_list*/
 #answer_list{
@@ -340,4 +371,40 @@ main{
     height: 25px;
     margin-left: auto;
     margin-right: auto;
+}
+#res_col{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#res_item{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+#res_tit{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+#res_item h1{
+    margin-top: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+#res_item p{
+    margin-top: 10px;
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size: 15px; 
+    margin-left: 10px;
+}
+#res_col{
+    margin-top: 10px;
+    border: 1px solid #F48221;
+    box-shadow: 0px 0px 5px #F48221;
+    background-color: white;
+    border-radius: 5px;
 }
