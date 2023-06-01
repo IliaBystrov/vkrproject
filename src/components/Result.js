@@ -5,6 +5,7 @@ export const Result = (props) =>{
     return(
         <div id="res_col">
             <h1 id = 'res_tit'>{"Результаты опроса: " + props.title}</h1>
+            <h1>----------------------------</h1>
             {
                 props.res_answ.map((i) => {
                     return(

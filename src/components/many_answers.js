@@ -43,7 +43,7 @@ export const Many_Answers = (props) => {
         <div className = "task_short_text">
             <h1>Текст вопроса</h1>
             <textarea id="short_text" name={'question_area_' + props.uid} 
-            onBlur={() => props.returnValue(props.uid, type)} defaultValue={props.text}></textarea>
+            onBlur={() => props.returnValue(props.uid, type)}></textarea>
             {
                 answers.map((answer) => {
                     return(
@@ -52,8 +52,7 @@ export const Many_Answers = (props) => {
                             id='answer_text' 
                             key={answer.id}
                             name={'answer_area_' + props.uid}
-                            onBlur={() => props.returnValue(props.uid, type)}
-                            defaultValue={answer.qw}>
+                            onBlur={() => props.returnValue(props.uid, type)}>
                             </input>
                             <button id='answer_delete' onClick={() => deleteitem(answer.id)}>
                                 <img src={require('../images/close.png')} alt='close'></img>

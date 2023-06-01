@@ -19,7 +19,7 @@ class QPool extends React.Component{
         this.onChangeEvent(event.target.value);
     }
     render(){
-        if(this.props.type === ''){
+
             return(
                 <div className = "qarea">
                     <div id="qcolumn">
@@ -37,28 +37,7 @@ class QPool extends React.Component{
                     </button>
                 </div>
             )
-        }
-        else{
-            return(
-                <div className = "qarea">
-                    <div id="qcolumn">
-                        <select id="selecttype" onChange={this.handleChange} autoFocus={true} onFocus={this.handleChange} defaultValue={this.props.type}>
-                            <option>Выберите тип вопроса</option>
-                            <option value="short">Короткий ответ</option>
-                            <option value="long">Длинный ответ</option>
-                            <option value="one">Один из списка</option>
-                            <option value="many">Несколько из списка</option>
-                        </select>
-                        {this.item}
-                    </div>
-                    <button id="question_delete" onClick={() => this.props.onDeleted(this.props.id)}>
-                        <img src={this.props.image_delete} alt="delete"></img>
-                    </button>
-                </div>
-            )
-            
-        }
-
+        
     }
     onChangeEvent(x){
         this.item=null;
@@ -67,30 +46,24 @@ class QPool extends React.Component{
             this.item=<Short_Answer
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
-                text={this.props.text}
             ></Short_Answer>;
             break;
             case 'long':
             this.item=<Long_Answer
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
-                text={this.props.text}
             ></Long_Answer>;
             break;
             case 'one':
             this.item=<One_Answer
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
-                text={this.props.text}
-                answ={this.props.answ}
             ></One_Answer>;
             break;
             case 'many':
             this.item=<Many_Answers
                 uid={this.props.id}
                 returnValue={this.props.setInfo}
-                text={this.props.text}
-                answ={this.props.answ}
             ></Many_Answers>;
             break;
         }
