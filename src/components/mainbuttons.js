@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShablonCard } from './shabloncard';
 import {SearchShablon} from './search';
+import axios from 'axios';
+import { Container, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Result } from './Result';
+import ReactDOMServer from 'react-dom/server';
 
 export const MainButtoms = () =>{
+
+    var vis = false;
 
     const [shablon_cards, setCard] = useState([
         {
@@ -20,19 +26,23 @@ export const MainButtoms = () =>{
     ]);
     
     //Метод для поиска шаблонов по совпадению с поисковой строкой и обновления списка
-    //Работает, но нужно связать с бд
     const ReloadCardList =()=>{
-        var title = document.getElementById("InSearch");
+        let title = document.getElementById("InSearch");
         setCard((prevState) => []);
 
-        const cards = [
-            {id:3, title: "Title", link: "link", data: "02.02.2022"},
-            {id:4, title: "Title2", link: "link", data: "02.02.2023"}
-        ]
+        let cards = [];
 
-        cards.map((card) => {
-            addcard(card.id, card.title, card.link, card.data);
-        })
+        axios.get('http://127.0.0.1:8000/api/forms/').then((res) => {
+            console.log(res.data);
+            res.data.map((r) => {
+                cards.push({id:r.id, title: r.title, link: r.link, data: r.created_at})
+            });
+            console.log("cards", cards);
+            cards.map((card) => {
+                addcard(card.id, card.title, card.link, card.data);
+            });
+            console.log(shablon_cards);
+        });
     };
 
     const addcard = (c_id, c_title, c_link, c_data) => {
@@ -73,6 +83,7 @@ export const MainButtoms = () =>{
 
     //Показать результаты
     const ShowResult =(id)=>{     
+        
     }
 
 
@@ -92,8 +103,6 @@ export const MainButtoms = () =>{
 
         return(
             <div className="menucontrol">
-                <div className = "groupbtn">
-                </div>
                 <div className="shablonlist">
                     <SearchShablon ReloadList={ReloadCardList}/>
                     {items}

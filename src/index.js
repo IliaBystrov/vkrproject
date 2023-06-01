@@ -30,7 +30,7 @@ root.render(
             <Nav.Link href='/'>Главная</Nav.Link>
             <Nav.Link href='/constructor'>Создать шаблон</Nav.Link>
             <Nav.Link href='/results'>Результаты</Nav.Link>
-            <Nav.Link href='/edit'></Nav.Link>
+            <Nav.Link href='/work'>Опрос</Nav.Link>
         </Nav>
     </Navbar.Collapse>
 </Container>
@@ -43,6 +43,7 @@ render(
             <Route exact path="/" Component={MainButtoms}/>
             <Route exact path="/constructor" Component={MainPanel}/>
             <Route exact path="/results" Component={Result}/>
+            <Route exact path="/work" Component={ShablonApp}/>
         </Routes>
     </Router>
     </>

@@ -3,6 +3,7 @@ import { Question_short } from './Question_short';
 import { Question_long } from './Question_long';
 import { Question_one } from './Question_one';
 import { Question_many } from './Question_many';
+import '../style2.css'
 
 export const ShablonApp = () => {
 
